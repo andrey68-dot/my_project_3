@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pytest
+import allure
 
 def test_button_exits(browser):
     browser.get('https://www.qa-practice.com/elements/button/simple')
