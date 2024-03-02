@@ -1,9 +1,12 @@
+from selenium import webdriver
 from selenium.webdriver.common.by import By
+import pytest
 
-def test_tabs(browser):
-    browser.get('https://magento.softwaretestingboard.com/what-is-new.html')
-    women_button = browser.find_element(By.ID, 'ui-id-4').click()
-    men_button = browser.find_element(By.ID, 'ui-id-5').click()
-    gear_button = browser.find_element(By.ID, 'ui-id-6').click()
+def test_button_exits(browser):
+    browser.get('https://www.qa-practice.com/elements/button/simple')
+    assert browser.find_element(By.ID, 'submit-id-submit').is_displayed()
 
-#1
+def test_button_exits_2(browser):
+    browser.get('https://www.qa-practice.com/elements/button/like_a_button')
+    assert browser.find_element(By.PARTIAL_LINK_TEXT, 'Click').is_displayed()
+
