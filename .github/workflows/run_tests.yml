@@ -66,8 +66,12 @@ jobs:
 
   publish-report:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
     needs: generate-report
     name: Report publication
+
     steps:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
